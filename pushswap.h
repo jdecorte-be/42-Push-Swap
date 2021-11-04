@@ -2,20 +2,30 @@
 # define PUSHSWAP_H
 
 #include <stdio.h>
-#include "libft/ft_atoi.c"
-#include "libft/ft_strlen.c"
 #include "libft/libft.h"
-#include "libft/ft_lstadd_back.c"
-#include "libft/ft_lstlast.c"
-#include "libft/ft_lstsize.c"
-#include "libft/ft_lstnew.c"
 
 typedef struct s_swap
 {
-    int *stack_a;
-    int *stack_b;
+    t_list *stack_a;
+    t_list *stack_b;
     int size;
 }       t_swap;
+
+void swap_a(t_swap *tab);
+void swap_b(t_swap *tab);
+void push_a(t_swap *tab);
+void push_b(t_swap *tab);
+void rotatea(t_swap *tab);
+void rotateb(t_swap *tab);
+void r_rotatea(t_swap *tab);
+void r_rotateb(t_swap *tab);
+
+int	issorted(t_swap	*tab);
+int	isrevsorted(t_swap	*tab);
+
+void	sort_small(t_swap	*tab);
+void printList(t_list *head);
+void	insertion(t_swap *tab);
 
 
 #endif // !PUSHSWAP_H
