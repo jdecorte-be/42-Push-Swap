@@ -11,6 +11,7 @@ typedef struct s_swap
     int size;
 }       t_swap;
 
+void ft_insertion(t_swap *tab);
 void swap_a(t_swap *tab);
 void swap_b(t_swap *tab);
 void push_a(t_swap *tab);
