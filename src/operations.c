@@ -11,6 +11,7 @@ void swap_a(t_swap *tab)
     tab->stack_a->next = tab->stack_a->next->next;
     tmp->next = tab->stack_a;
     tab->stack_a = tmp;
+	tab->ope++;
     printf("sa\n");
 }
 
@@ -25,6 +26,7 @@ void swap_b(t_swap *tab)
     tab->stack_b->next = tab->stack_b->next->next;
     tmp->next = tab->stack_b;
     tab->stack_b = tmp;
+	tab->ope++;
     printf("sb\n");
 }
 
@@ -34,6 +36,7 @@ void ss(t_swap *tab)
     swap_a(tab);
     swap_b(tab);
     printf("ss\n");
+	tab->ope++;
 }
 
 //pa
@@ -48,6 +51,7 @@ void push_a(t_swap *tab)
 	tab->stack_a = tab->stack_b;
 	tab->stack_b = tmp;
     printf("pa\n");
+	tab->ope++;
 }
 
 //pb
@@ -62,6 +66,7 @@ void push_b(t_swap *tab)
 	tab->stack_b = tab->stack_a;
 	tab->stack_a = tmp;
     printf("pb\n");
+	tab->ope++;
 }
 
 void rotatea(t_swap *tab)
@@ -77,6 +82,7 @@ void rotatea(t_swap *tab)
 	tab->stack_a = tmp->next;
 	tmp->next = NULL;
     printf("ra\n");
+	tab->ope++;
 }
 
 void rotateb(t_swap *tab)
@@ -92,6 +98,7 @@ void rotateb(t_swap *tab)
 	tab->stack_b = tmp->next;
 	tab->stack_b = NULL;
     printf("ra\n");
+	tab->ope++;
 }
 
 void r_rotatea(t_swap *tab)
@@ -107,6 +114,7 @@ void r_rotatea(t_swap *tab)
 	tmp = (tab->stack_a)->next;
 	(tab->stack_a)->next = NULL;
 	tab->stack_a = tmp;
+	tab->ope++;
 }
 
 void r_rotateb(t_swap *tab)
@@ -122,4 +130,5 @@ void r_rotateb(t_swap *tab)
 	tmp = (tab->stack_b)->next;
 	(tab->stack_b)->next = NULL;
 	tab->stack_b = tmp;
+	tab->ope++;
 }
