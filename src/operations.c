@@ -96,8 +96,8 @@ void rotateb(t_swap *tab)
 		tab->stack_b = (tab->stack_b)->next;
 	(tab->stack_b)->next = tmp;
 	tab->stack_b = tmp->next;
-	tab->stack_b = NULL;
-    printf("ra\n");
+	tmp->next = NULL;
+    printf("rb\n");
 	tab->ope++;
 }
 
@@ -115,6 +115,7 @@ void r_rotatea(t_swap *tab)
 	(tab->stack_a)->next = NULL;
 	tab->stack_a = tmp;
 	tab->ope++;
+	printf("rra\n");
 }
 
 void r_rotateb(t_swap *tab)
@@ -131,4 +132,5 @@ void r_rotateb(t_swap *tab)
 	(tab->stack_b)->next = NULL;
 	tab->stack_b = tmp;
 	tab->ope++;
+	
 }

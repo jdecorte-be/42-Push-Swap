@@ -27,9 +27,9 @@ int nbrdig(t_swap	*tab)
 	return count;
 }
 
-int	issorted(t_swap	*tab)
+int	issorted(t_list	*stack)
 {
-	t_list	*tmp = tab->stack_a;
+	t_list	*tmp = stack;
 	while(tmp->next)
 	{
 		if (tmp->content > tmp->next->content)

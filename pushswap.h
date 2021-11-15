@@ -14,6 +14,8 @@ typedef struct s_swap
     int ope;
 }       t_swap;
 
+
+int	issorted(t_list	*stack);
 void sorting(t_swap *tab);
 void ft_index_replace(t_swap *tab, int index, int to);
 void ft_index_sorted(t_swap *tab);

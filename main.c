@@ -48,9 +48,7 @@ int main(int ac, char **ag)
 
 
 	ft_sortindex(tab);
-	printList(tab->stack_a);
 	ft_index_sorted(tab);
-	printList(tab->stack_a);
 	sorting(tab);
 
 
@@ -60,6 +58,7 @@ int main(int ac, char **ag)
 
 // print res ---------------------------------
 	printList(tab->stack_a);
+	printList(tab->stack_b);
 	// int i =0;
 	// int len = ft_lstsize(tab->stack_a);
 	// while(len--)

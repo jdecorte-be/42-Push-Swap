@@ -71,19 +71,137 @@ void ft_sortindex(t_swap *tab)
     tab->sorted = res;
 }
 
+int ft_indexchr(t_swap *tab, int index)
+{
+    t_list *tmp = tab->stack_a;
+    int i = 0;
+    while(tmp)
+    {
+        if(tmp->index == index)
+            break;
+        i++;
+        tmp = tmp->next;
+    }
+    return i;
+}
+
+
+
 void sorting(t_swap *tab)
 {
+    // int maxindex = ft_lstsize(tab->stack_a);
+    // int chunksize = maxindex / 2;
+    // int len = chunksize;
+    // int len2 = maxindex;
+    // while(len2--)
+    // {
+    //     // x < 50
+    //     if (tab->stack_a->index < chunksize)
+    //         push_b(tab);
+    // }
+    // while(tab->stack_a)
+    //     push_b(tab);
+
+    // int i = maxindex - 1;
+    // printf("%d\n", i);
+    // int totallen;
+    // while(tab->stack_b)
+    // {
+    //     totallen = ft_lstsize(tab->stack_b) / 2;
+    //     if (ft_indexchr(tab, i) < totallen)
+    //     {
+    //         if(tab->stack_b->index == i)
+    //         {
+    //             push_a(tab);
+    //             i--;
+    //         }
+    //         else
+    //             rotateb(tab);
+    //     }
+    //     else
+    //     {
+    //         if(tab->stack_b->index == i)
+    //         {
+    //             push_a(tab);
+    //             i--;
+    //         }
+    //         else
+    //             r_rotateb(tab);
+    //     }
+
+
+
+
+    // }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     int i = 0;
+    int totallen;
     while(tab->stack_a)
     {
-        if(tab->stack_a->index == i)
+        totallen = ft_lstsize(tab->stack_a) / 2;
+        // premier 5 < 3 
+        if (ft_indexchr(tab, i) < totallen)
         {
-            push_b(tab);
-            i++;
+            if(tab->stack_a->index == i)
+            {
+                push_b(tab);
+                i++;
+            }
+            else
+                rotatea(tab);
         }
         else
-            rotatea(tab);
+        {
+
+            if(tab->stack_a->index == i)
+            {
+                push_b(tab);
+                i++;
+            }
+            else
+                r_rotatea(tab);
+            
+        }
     }
+
+
+
+
+
+
     while(tab->stack_b)
     {
         push_a(tab);
