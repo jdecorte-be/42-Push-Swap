@@ -132,5 +132,5 @@ void r_rotateb(t_swap *tab)
 	(tab->stack_b)->next = NULL;
 	tab->stack_b = tmp;
 	tab->ope++;
-	
+	printf("rrb\n");
 }

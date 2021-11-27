@@ -28,6 +28,7 @@ void rotatea(t_swap *tab);
 void rotateb(t_swap *tab);
 void r_rotatea(t_swap *tab);
 void r_rotateb(t_swap *tab);
+void radix_sort(t_swap *tab);
 
 int	isrevsorted(t_swap	*tab);
 

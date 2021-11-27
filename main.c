@@ -45,28 +45,14 @@ int main(int ac, char **ag)
 	tab->stack_a = ft_init(tab->stack_a, ag);
 	tab->stack_tmp = ft_init(tab->stack_tmp, ag);
 
-
-
 	ft_sortindex(tab);
 	ft_index_sorted(tab);
-	sorting(tab);
-
-
-
-
+	radix_sort(tab);
 
 
 // print res ---------------------------------
 	printList(tab->stack_a);
 	printList(tab->stack_b);
-	// int i =0;
-	// int len = ft_lstsize(tab->stack_a);
-	// while(len--)
-	// {
-	// 	printf("%d, ", tab->sorted[i]);
-	// 	i++;
-	// }
-	// printf("\n");
 	printf("|||| %d |||| \n", tab->ope);
 }
 
