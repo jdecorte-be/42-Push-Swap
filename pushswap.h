@@ -9,12 +9,22 @@ typedef struct s_swap
     t_list *stack_a;
     t_list *stack_b;
     t_list *stack_tmp;
+    int chunknbr;
     int *sorted;
     int size;
-    int ope;
 }       t_swap;
 
+void ft_index_replace(t_swap *tab, int index, int to);
+void ft_index_sorted(t_swap *tab);
+void indexremove(t_swap *tab, int index);
+int find_min(t_swap *tab);
+void ft_sortindex(t_swap *tab);
 
+int	min(t_swap	*tab);
+
+
+void	sort_3nbr(t_swap	*tab);
+int findmidval(t_list *list, int to);
 int	issorted(t_list	*stack);
 void sorting(t_swap *tab);
 void ft_index_replace(t_swap *tab, int index, int to);

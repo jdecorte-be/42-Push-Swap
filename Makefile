@@ -1,34 +1,30 @@
-NAME = libft.a
+NAME = push_swap
 
-SRCS = 
+CC = gcc
 
+CFLAGS = -Werror -Wall -Wextra
 
-BONUS = 
+RM = rm -rf
 
-OBJS = ${SRCS:.c=.o}
+SRCS = 	main.c\
+		src/index.c\
+		src/operations.c\
+		src/sort.c\
+		src/utils.c\
+		libft/libft.a\
 
-OBJSBONUS = ${BONUS:.c=.o}
+$(NAME) :
+	make bonus -C libft
+	gcc -fsanitize=address $(CFLAGS) $(SRCS) -o $(NAME)
 
-CC		= gcc
-RM		= rm -f
+all : $(NAME)
 
-CFLAGS = -Wall -Wextra -Werror
+fclean : clean
+	$(RM) $(NAME)
+	make fclean -C libft
 
-.c.o:
-		${CC} ${CFLAGS} -g -c $< -o ${<:.c=.o}
+clean :
+	$(RM) $(NAME)
+	make clean -C libft
 
-$(NAME): ${OBJS}
-		ar rcs ${NAME} ${OBJS}
-
-bonus:	${OBJS} ${OBJSBONUS}
-		ar rcs ${NAME} ${OBJS} ${OBJSBONUS}
-
-all:	${NAME}
-
-clean:
-		${RM} ${OBJS} ${OBJSBONUS}
-
-fclean:	clean
-		${RM} ${NAME}
-
-re:		fclean all
+re : fclean all
