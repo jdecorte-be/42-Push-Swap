@@ -41,7 +41,7 @@ void push_a(t_swap *tab)
 {
     t_list	*tmp;
 
-	if (!(tab->stack_b) || !(tab->stack_a))
+	if (!(tab->stack_b))
 		return ;
 	tmp = (tab->stack_b)->next;
 	(tab->stack_b)->next = (tab->stack_a);
