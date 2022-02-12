@@ -6,67 +6,35 @@
 /*   By: decortejohn <decortejohn@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/05 14:34:08 by decortejohn       #+#    #+#             */
-/*   Updated: 2022/01/07 14:25:55 by decortejohn      ###   ########.fr       */
+/*   Updated: 2022/02/12 16:50:00 by decortejohn      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../pushswap.h"
 
-void	swap_a(t_swap *tab)
+void	pa(t_list **stack1, t_list **stack2)
 {
-	t_list	*tmp;
+	t_list	*push_b;
 
-	if (!tab->stack_a || !tab->stack_a->next)
+	if (!(*stack2))
 		return ;
-	tmp = tab->stack_a->next;
-	tab->stack_a->next = tab->stack_a->next->next;
-	tmp->next = tab->stack_a;
-	tab->stack_a = tmp;
-	ft_putstr_fd("sa\n", 1);
+	push_b = (*stack2)->next;
+	(*stack2)->next = *stack1;
+	*stack1 = *stack2;
+	*stack2 = push_b;
+	write(1, "pa\n", 3);
 }
 
-void	swap_b(t_swap *tab)
+void	pb(t_list **stack1, t_list **stack2)
 {
-	t_list	*tmp;
+	t_list	*push_a;
 
-	if (!tab->stack_b || !tab->stack_b->next)
+	if (!(*stack1))
 		return ;
-	tmp = tab->stack_b->next;
-	tab->stack_b->next = tab->stack_b->next->next;
-	tmp->next = tab->stack_b;
-	tab->stack_b = tmp;
-	ft_putstr_fd("sb\n", 1);
+	push_a = (*stack1)->next;
+	(*stack1)->next = *stack2;
+	*stack2 = *stack1;
+	*stack1 = push_a;
+	write(1, "pb\n", 3);
 }
 
-void	ss(t_swap *tab)
-{
-	swap_a(tab);
-	swap_b(tab);
-	ft_putstr_fd("ss\n", 1);
-}
-
-void	push_a(t_swap *tab)
-{
-	t_list	*tmp;
-
-	if (!(tab->stack_b))
-		return ;
-	tmp = (tab->stack_b)->next;
-	(tab->stack_b)->next = (tab->stack_a);
-	tab->stack_a = tab->stack_b;
-	tab->stack_b = tmp;
-	ft_putstr_fd("pa\n", 1);
-}
-
-void	push_b(t_swap *tab)
-{
-	t_list	*tmp;
-
-	if (!(tab->stack_a))
-		return ;
-	tmp = (tab->stack_a)->next;
-	(tab->stack_a)->next = (tab->stack_b);
-	tab->stack_b = tab->stack_a;
-	tab->stack_a = tmp;
-	ft_putstr_fd("pb\n", 1);
-}

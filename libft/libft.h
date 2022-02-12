@@ -6,7 +6,7 @@
 /*   By: decortejohn <decortejohn@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/01 14:12:18 by jdecorte          #+#    #+#             */
-/*   Updated: 2022/01/07 15:05:55 by decortejohn      ###   ########.fr       */
+/*   Updated: 2022/02/12 13:05:09 by decortejohn      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@
 typedef struct s_list
 {
     long int content;
+    int flag;
     int index;
     struct s_list *next;
 }   t_list;
