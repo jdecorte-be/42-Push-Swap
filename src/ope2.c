@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ope2.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: decortejohn <decortejohn@student.42.fr>    +#+  +:+       +#+        */
+/*   By: jdecorte <jdecorte@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/07 14:01:53 by decortejohn       #+#    #+#             */
-/*   Updated: 2022/02/12 16:51:14 by decortejohn      ###   ########.fr       */
+/*   Updated: 2022/02/27 16:35:32 by jdecorte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../pushswap.h"
+#include "pushswap.h"
 
 static void	ft_r(t_list **stack)
 {

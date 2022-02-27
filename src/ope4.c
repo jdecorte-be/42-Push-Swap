@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ope4.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: decortejohn <decortejohn@student.42.fr>    +#+  +:+       +#+        */
+/*   By: jdecorte <jdecorte@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/12 16:52:49 by decortejohn       #+#    #+#             */
-/*   Updated: 2022/02/12 16:52:58 by decortejohn      ###   ########.fr       */
+/*   Updated: 2022/02/27 16:35:39 by jdecorte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../pushswap.h"
+#include "pushswap.h"
 
 static void	ft_rr(t_list **stack)
 {
@@ -28,6 +28,11 @@ static void	ft_rr(t_list **stack)
 	*stack = end;
 }
 
+void	rra(t_list **stack1)
+{
+	ft_rr(stack1);
+	write(1, "rra\n", 4);
+}
 
 void	rrb(t_list **stack2)
 {

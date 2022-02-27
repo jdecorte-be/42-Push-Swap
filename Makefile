@@ -6,7 +6,7 @@ CFLAGS = -Werror -Wall -Wextra -fsanitize=address
 
 RM = rm -rf
 
-SRCS = 	main.c\
+SRCS = 	src/main.c\
 		src/index.c\
 		src/ope1.c\
 		src/ope2.c\
@@ -15,8 +15,15 @@ SRCS = 	main.c\
 		src/quick_sort.c\
 		src/sort_handler.c\
 		src/sort_utils.c\
-		src/utils.c\
 		libft/libft.a\
+
+SRCS_BONUS = src_bonus/checker_bonus.c\
+			src_bonus/ope1_bonus.c\
+			src_bonus/ope2_bonus.c\
+			src_bonus/ope3_bonus.c\
+			src_bonus/ope4_bonus.c\
+			src_bonus/utils_bonus.c\
+			libft/libft.a\
 
 $(NAME) :
 	make bonus -C libft
@@ -33,3 +40,7 @@ clean :
 	make clean -C libft
 
 re : fclean all
+
+bonus : 
+	make bonus -C libft
+	gcc $(CFLAGS) $(SRCS_BONUS) -o checker

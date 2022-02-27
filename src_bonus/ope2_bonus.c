@@ -1,44 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ope3.c                                             :+:      :+:    :+:   */
+/*   ope2_bonus.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jdecorte <jdecorte@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/12 16:51:45 by decortejohn       #+#    #+#             */
-/*   Updated: 2022/02/27 16:35:36 by jdecorte         ###   ########.fr       */
+/*   Created: 2022/01/07 14:01:53 by decortejohn       #+#    #+#             */
+/*   Updated: 2022/02/26 22:48:53 by jdecorte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "pushswap.h"
+#include "../pushswap.h"
 
-static void	ft_s(t_list **stack)
+static void	ft_r(t_list **stack)
 {
-	t_list	*tmp;
+	t_list	*head;
 
+	head = *stack;
 	if (!(*stack) || !((*stack)->next))
 		return ;
-	tmp = *stack;
-	*stack = (*stack)->next;
-	tmp->next = (*stack)->next;
-	(*stack)->next = tmp;
+	*stack = head->next;
+	head->next = NULL;
+	ft_lstlast(*stack)->next = head;
 }
 
-void	sa(t_list **stack1)
+void	ra(t_list **stack1)
 {
-	ft_s(stack1);
-	write(1, "sa\n", 3);
+	ft_r(stack1);
 }
 
-void	sb(t_list **stack2)
+void	rb(t_list **stack2)
 {
-	ft_s(stack2);
-	write(1, "sb\n", 3);
+	ft_r(stack2);
 }
 
-void	ss(t_list **stack1, t_list **stack2)
+void	rr(t_list **stack1, t_list **stack2)
 {
-	ft_s(stack1);
-	ft_s(stack2);
-	write(1, "ss\n", 3);
+	ft_r(stack1);
+	ft_r(stack2);
 }

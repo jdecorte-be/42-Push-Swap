@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   quick_sort.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: decortejohn <decortejohn@student.42.fr>    +#+  +:+       +#+        */
+/*   By: jdecorte <jdecorte@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/07 14:38:33 by decortejohn       #+#    #+#             */
-/*   Updated: 2022/02/12 17:03:49 by decortejohn      ###   ########.fr       */
+/*   Updated: 2022/02/27 16:36:51 by jdecorte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../pushswap.h"
+#include "pushswap.h"
 
 void	begin_sorting(t_list **stack1, t_list **stack2, t_push *push, int count)
 {
@@ -23,7 +23,7 @@ void	begin_sorting(t_list **stack1, t_list **stack2, t_push *push, int count)
 			pb(stack1, stack2);
 		else
 		{
-			if (ft_lstsize(*stack2) > 1 && (((*stack2)->index) < (push->mid / 2)))
+			if (ft_lstsize(*stack2) > 1 && (*stack2)->index < (push->mid / 2))
 				rr(stack1, stack2);
 			else
 				ra(stack1);

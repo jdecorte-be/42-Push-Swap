@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: decortejohn <decortejohn@student.42.fr>    +#+  +:+       +#+        */
+/*   By: jdecorte <jdecorte@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/01 14:12:18 by jdecorte          #+#    #+#             */
-/*   Updated: 2022/02/12 13:05:09 by decortejohn      ###   ########.fr       */
+/*   Updated: 2022/02/27 14:46:31 by jdecorte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 # include <unistd.h>
 # include <stdlib.h>
 # include <string.h>
+# include "get_next_line.h"
 
 typedef struct s_list
 {
@@ -24,7 +25,8 @@ typedef struct s_list
     struct s_list *next;
 }   t_list;
 
-int		ft_atoi( const char *str);
+int	ft_strcmp(char *s1, char *s2);
+long    ft_atoi(char *str);
 void	ft_bzero(void *s, size_t n);
 void	*ft_calloc( size_t elementCount, size_t elementSize );
 int		ft_isalpha(int character);
@@ -43,6 +45,7 @@ char	*ft_strjoin(char const *s1, char const *s2);
 size_t	ft_strlcat(char *dst, const char *src, size_t size);
 size_t	ft_strlcpy( char *dst, const char *src, size_t size);
 size_t	ft_strlen(const char *theString);
+int     ft_strcmp(char *s1, char *s2);
 int		ft_strncmp(const char *first, const char *second, size_t length);
 char	*ft_strnstr(const char	*big, const char *little, size_t len);
 char	*ft_strrchr(const char *string, int searchedChar);
