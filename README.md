@@ -4,7 +4,7 @@
 </h1>
 
 <p align="center">
-	<b><i>Sorting 2 stacks</i></b><br>
+	<b><i>42 Algorithm Project - Sort problem</i></b><br>
 </p>
 
 <p align="center">
