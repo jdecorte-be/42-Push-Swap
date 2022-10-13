@@ -1,4 +1,3 @@
-# 42-Push-Swap
 <h1 align="center">
 	📖 Push Swap
 </h1>
